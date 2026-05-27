@@ -1,0 +1,42 @@
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+02 — MODEL CONFIGURATIONS AND OUTPUT PARAMETERS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+─────────────────────────────────────────
+KEYWORDS
+─────────────────────────────────────────
+
+temperature    → Controls randomness. 0 = deterministic. >1 = very random.
+                 Low (0–0.3): classification, extraction, structured output.
+                 High (0.7–1.2): creative writing, brainstorming.
+
+top_p          → Nucleus sampling. Only sample from top-p probability mass.
+                 top_p=0.1 → very focused. top_p=0.9 → diverse.
+                 Use temperature OR top_p, not both.
+
+max_tokens     → Hard limit on output length. Controls cost and latency.
+
+stop           → Halt generation at a specific string.
+                 stop=["4."] → model stops before item 4 in a list.
+
+seed           → Makes outputs reproducible. Same seed + same temp = same output.
+
+─────────────────────────────────────────
+STRUCTURED OUTPUT
+─────────────────────────────────────────
+
+Ask for JSON: "Return only valid JSON, nothing else."
+temperature=0 for reliable JSON output.
+Always add try/except when parsing model JSON.
+
+─────────────────────────────────────────
+QUICK REFERENCE
+─────────────────────────────────────────
+
+Task                     temp    top_p   max_tokens
+─────────────────────────────────────────────────
+Classification           0       0.9     10–30
+JSON extraction          0       0.9     100–200
+Creative writing         0.8     0.9     300–1000
+Summarization            0.3     0.9     100–300
+Code generation          0       0.9     300–800

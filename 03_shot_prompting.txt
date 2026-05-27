@@ -1,0 +1,40 @@
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+03 — SHOT PROMPTING
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+─────────────────────────────────────────
+KEYWORDS
+─────────────────────────────────────────
+
+Zero-shot   → No examples. Model uses pre-training knowledge only.
+              Works for common tasks (classification, QA, summarization).
+
+One-shot    → 1 example. Teaches the expected format.
+              Enough when format matters more than task novelty.
+
+Few-shot    → 3–10 examples. Best for:
+              - Custom taxonomies the model hasn't seen.
+              - Enforcing strict output format.
+              - Teaching style or tone.
+
+─────────────────────────────────────────
+FEW-SHOT PATTERN
+─────────────────────────────────────────
+
+Input:  <example input 1>
+Output: <expected output 1>
+
+Input:  <example input 2>
+Output: <expected output 2>
+
+Input:  <new input>
+Output:
+
+─────────────────────────────────────────
+RULES
+─────────────────────────────────────────
+
+Examples must be consistent in format and style.
+Balance classes in classification examples (avoid all-positive examples).
+Put the most relevant example closest to the query.
+3–5 examples is usually enough; more adds cost without benefit.

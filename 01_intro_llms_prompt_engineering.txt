@@ -1,0 +1,36 @@
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+01 — INTRO TO LLMs AND PROMPT ENGINEERING
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+WHAT THIS NOTEBOOK COVERS
+  LLM mechanics, tokenization, prompt anatomy, and why prompting matters.
+
+─────────────────────────────────────────
+KEYWORDS
+─────────────────────────────────────────
+
+LLM              → Predicts the next token conditioned on all prior tokens.
+                   Autoregressive: each output token feeds into the next prediction.
+
+Tokenization     → Splits text into sub-word units (BPE). ~4 chars/token in English.
+                   GPT-2 vocab: 50,257 tokens. tiktoken: fast BPE tokenizer.
+
+Prompt           → Input text that conditions the LLM's output.
+                   4 components: Instruction + Context + Input + Output Format.
+
+─────────────────────────────────────────
+PROMPTING vs FINE-TUNING vs RAG
+─────────────────────────────────────────
+
+Prompting    → No training. Limited by context window. Zero cost.
+Fine-tuning  → Baked-in knowledge. Requires labeled data. High cost.
+RAG          → Dynamic knowledge. Retrieval latency. Medium cost.
+
+─────────────────────────────────────────
+PROMPT QUALITY RULES
+─────────────────────────────────────────
+
+Bad:  "Tell me about AI"
+Good: Role + Task + Format + Constraints
+
+Rule: Be specific about WHO the model is, WHAT to do, HOW to format output.
