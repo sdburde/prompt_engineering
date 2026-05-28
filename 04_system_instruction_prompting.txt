@@ -1,0 +1,39 @@
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+04 — SYSTEM INSTRUCTION PROMPTING
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+─────────────────────────────────────────
+KEYWORDS
+─────────────────────────────────────────
+
+System prompt  → Persistent instructions that shape all model responses.
+                 Applied before every user turn in multi-turn conversations.
+
+Role-playing   → "You are a [expert]." Constrains knowledge domain and vocabulary.
+                 Doctor: clinical, cautious. Teacher: simple, analogical.
+
+Persona        → Controls tone and style.
+                 Formal academic vs casual friend vs business exec.
+
+Constraints    → Rules baked into system prompt:
+                 - Never discuss X.
+                 - Always end with Y.
+                 - Return only Z format.
+
+─────────────────────────────────────────
+SYSTEM PROMPT ANATOMY
+─────────────────────────────────────────
+
+You are [role/persona].
+[Domain constraints / rules.]
+[Output format requirements.]
+[Tone and style instructions.]
+
+─────────────────────────────────────────
+RULES
+─────────────────────────────────────────
+
+System prompt persists across all turns — set behavior once.
+More specific roles give more focused answers.
+Combine role + constraints + format for production prompts.
+Test edge cases (off-topic, adversarial) to validate constraints.
