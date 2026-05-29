@@ -1,0 +1,41 @@
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+05 — DELIMITER PROMPTING
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+─────────────────────────────────────────
+KEYWORDS
+─────────────────────────────────────────
+
+Delimiter      → Character(s) that bound user-supplied content.
+                 Separates instructions from data.
+                 Prevents prompt injection (malicious input overriding instructions).
+
+Prompt injection → User input that contains instructions like "ignore previous..."
+                   Delimiters signal: everything between markers is DATA, not commands.
+
+─────────────────────────────────────────
+COMMON DELIMITERS
+─────────────────────────────────────────
+
+Triple backticks   ```text```
+Triple quotes      """text"""
+XML tags           <article>text</article>
+Section headers    ## ROLE / ## TASK / ## INPUT
+Angle brackets     [TEXT] text [/TEXT]
+
+─────────────────────────────────────────
+STRUCTURED PROMPT PATTERN
+─────────────────────────────────────────
+
+<task>What to do</task>
+<input>User-supplied data</input>
+<format>How to format output</format>
+
+─────────────────────────────────────────
+RULES
+─────────────────────────────────────────
+
+Always delimit untrusted user input.
+Re-state the task AFTER the user input block (defense-in-depth).
+Use XML-style tags for multi-section prompts.
+Be consistent: pick one delimiter style per application.
