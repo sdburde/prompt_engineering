@@ -1,0 +1,41 @@
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+06 — CHAIN OF THOUGHT (CoT) PROMPTING
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+─────────────────────────────────────────
+KEYWORDS
+─────────────────────────────────────────
+
+CoT            → Make the model show reasoning steps before the final answer.
+                 Improves accuracy on math, logic, multi-step tasks.
+
+Zero-shot CoT  → Append "Let's think step by step." to any question.
+                 Kojima et al. 2022. No examples needed.
+
+Few-shot CoT   → Provide examples WITH reasoning steps.
+                 Problem: ... Reasoning: ... Answer: N
+                 More reliable than zero-shot for complex tasks.
+
+─────────────────────────────────────────
+WHY CoT WORKS
+─────────────────────────────────────────
+
+Forces model to allocate compute to intermediate steps.
+Each step conditions the next — errors caught earlier.
+Reasoning trace is auditable by humans.
+
+─────────────────────────────────────────
+PATTERNS
+─────────────────────────────────────────
+
+Zero-shot:   "{problem}\n\nThink step by step."
+Few-shot:    Show 2–3 (problem, reasoning, answer) triples, then new problem.
+Structured:  "Step 1: ... Step 2: ... Step 3: ... Final answer:"
+
+─────────────────────────────────────────
+WHEN TO USE
+─────────────────────────────────────────
+
+Math word problems, logic puzzles, multi-step coding.
+NOT needed for simple classification or retrieval.
+Use temperature=0 for CoT to get deterministic reasoning.
