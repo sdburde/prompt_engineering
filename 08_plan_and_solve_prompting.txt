@@ -1,0 +1,44 @@
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+08 — PLAN AND SOLVE PROMPTING
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+─────────────────────────────────────────
+KEYWORDS
+─────────────────────────────────────────
+
+Plan and Solve  → Wang et al. 2023. Two-step: first create a plan, then execute it.
+                  Outperforms zero-shot CoT on math benchmarks.
+
+Decompose       → Break complex question into sub-questions.
+                  Answer each sub-question, then synthesize.
+
+Two-stage PS    → Stage 1: "Create a numbered plan. Do not solve yet."
+                  Stage 2: "Execute the plan step by step."
+
+─────────────────────────────────────────
+PATTERN
+─────────────────────────────────────────
+
+{problem}
+
+First, let's create a plan:
+1. [sub-step 1]
+2. [sub-step 2]
+3. [sub-step 3]
+
+Now solve each step:
+
+─────────────────────────────────────────
+VS ZERO-SHOT CoT
+─────────────────────────────────────────
+
+Zero-shot CoT: "Let's think step by step." → implicit planning
+Plan and Solve: explicit plan → more structured, auditable
+
+─────────────────────────────────────────
+WHEN TO USE
+─────────────────────────────────────────
+
+Multi-part problems where order of operations matters.
+Complex analysis tasks (pros/cons, system design, research).
+Code generation: plan architecture, then implement.
