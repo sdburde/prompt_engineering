@@ -1,0 +1,42 @@
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+11 — PROMPT CHAINING
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+─────────────────────────────────────────
+KEYWORDS
+─────────────────────────────────────────
+
+Prompt chaining → Output of step N is input to step N+1.
+                  Break complex tasks into sequential sub-tasks.
+                  Each step is simpler and verifiable.
+
+Linear chain    → A → B → C → D (fixed sequence)
+
+Conditional chain → Classify first → branch to different prompts based on class.
+                    Example: sentiment → if NEGATIVE: apologetic reply, else: positive reply.
+
+─────────────────────────────────────────
+EXAMPLE CHAIN
+─────────────────────────────────────────
+
+Step 1: Extract key themes from topic
+Step 2: Create outline from themes
+Step 3: Write introduction from outline
+Step 4: Polish introduction
+
+─────────────────────────────────────────
+RULES
+─────────────────────────────────────────
+
+Each step should do ONE thing well.
+Pass only what's needed to the next step (trim verbose outputs).
+Add validation between steps: if step 2 fails, don't proceed.
+Use conditional chains when the task type affects the next action.
+
+─────────────────────────────────────────
+VS SINGLE LONG PROMPT
+─────────────────────────────────────────
+
+Single prompt: simpler, faster, 1 API call.
+Chaining:      each step verifiable, better quality, easier debugging.
+Use chaining when single prompt produces inconsistent or low-quality output.
