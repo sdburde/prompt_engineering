@@ -1,0 +1,45 @@
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+09 — CHAIN OF DRAFT PROMPTING
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+─────────────────────────────────────────
+KEYWORDS
+─────────────────────────────────────────
+
+Chain of Draft  → Generate draft → critique → refine. Iterative improvement loop.
+                  Like human writing: first draft never final.
+
+Critique step   → "What are 3 specific weaknesses in this draft?"
+                  Forces model to self-evaluate before rewriting.
+
+Compressed CoD  → All steps in one prompt:
+                  "Step 1 - Draft: ... Step 2 - Critique: ... Step 3 - Final: ..."
+                  Faster (1 API call) but less reliable than multi-turn.
+
+─────────────────────────────────────────
+MULTI-TURN CoD PATTERN
+─────────────────────────────────────────
+
+Turn 1: "Write a first draft for: {task}"
+Turn 2: "Critique this draft. List 3 specific weaknesses."
+Turn 3: "Rewrite addressing all weaknesses."
+
+─────────────────────────────────────────
+COMPRESSED CoD PATTERN
+─────────────────────────────────────────
+
+Task: {task}
+
+Step 1 - Draft: Write a quick first attempt.
+Step 2 - Critique: Note 2 weaknesses.
+Step 3 - Final: Rewrite addressing the weaknesses.
+
+Output all three steps.
+
+─────────────────────────────────────────
+WHEN TO USE
+─────────────────────────────────────────
+
+Writing tasks: emails, reports, product descriptions.
+Code: generate → find bugs → fix.
+Analysis: draft → identify gaps → complete analysis.
