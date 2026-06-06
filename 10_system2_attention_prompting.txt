@@ -1,0 +1,43 @@
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+10 — SYSTEM 2 ATTENTION PROMPTING
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+─────────────────────────────────────────
+KEYWORDS
+─────────────────────────────────────────
+
+S2A            → System 2 Attention. Weston & Suber 2023.
+                 Two steps: (1) rewrite question to remove bias/noise, (2) answer rewritten question.
+
+Bias           → Irrelevant anecdotes, emotional framing, loaded assumptions in the question.
+                 Example: "My grandfather, a genius, believed X. Don't you agree?"
+
+Distractor     → Information in the problem that is irrelevant to solving it.
+                 Example: "John is tall and works as a chef. He has 12 cookies..."
+                 "tall" and "chef" are distractors for the math problem.
+
+─────────────────────────────────────────
+PATTERN
+─────────────────────────────────────────
+
+Step 1 — Neutralize:
+  "Rewrite this question removing irrelevant context and emotional framing."
+
+Step 2 — Answer:
+  Answer the rewritten question only.
+
+─────────────────────────────────────────
+USE CASES
+─────────────────────────────────────────
+
+Opinion questions with loaded framing.
+Math problems with distractors.
+Customer questions with irrelevant backstory.
+Any question where bias could skew the answer.
+
+─────────────────────────────────────────
+KEY INSIGHT
+─────────────────────────────────────────
+
+LLMs are sycophantic — they tend to agree with framing in the question.
+S2A breaks the sycophancy by separating the question from its framing.
