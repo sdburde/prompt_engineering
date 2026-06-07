@@ -1,0 +1,41 @@
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+12 — META PROMPTING
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+─────────────────────────────────────────
+KEYWORDS
+─────────────────────────────────────────
+
+Meta prompting  → Using LLM to CREATE or IMPROVE prompts.
+                  Two patterns: generation and improvement.
+
+Prompt generation  → "Write a system prompt for an LLM that will do X."
+                     Useful when you know the task but not how to frame it.
+
+Prompt improvement → "Here is my prompt. Make it better for X audience."
+                     Useful for iterating on weak prompts.
+
+Prompt template    → Parameterized prompt with {placeholders}.
+                     LLM generates the template; you fill in the variables.
+
+─────────────────────────────────────────
+META PROMPT PATTERN
+─────────────────────────────────────────
+
+You are a prompt engineering expert.
+Write an effective [system prompt / template] for:
+- Task: {task}
+- Audience: {audience}
+- Output format: {format}
+- Constraints: {constraints}
+
+Return only the prompt text.
+
+─────────────────────────────────────────
+RULES
+─────────────────────────────────━━━━━━━━
+
+Always test the generated prompt on real examples.
+Meta prompts work better with specific task descriptions.
+Use meta prompting for: new domains, unfamiliar tasks, prompt optimization.
+Compare generated prompt vs your hand-written one; take the better result.

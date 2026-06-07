@@ -1,0 +1,43 @@
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+13 — MULTIMODAL PROMPTING
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+─────────────────────────────────────────
+KEYWORDS
+─────────────────────────────────────────
+
+Multimodal     → Input includes both text and images (or audio/video).
+                 Model: llama-3.2-11b-vision-preview (Groq).
+
+Vision prompt  → Pass image as URL or base64 alongside text.
+                 content = [{type: image_url, image_url: {url: ...}}, {type: text, text: ...}]
+
+─────────────────────────────────────────
+PROMPT STRATEGIES FOR IMAGES
+─────────────────────────────────────────
+
+Describe:    "Describe what you see in this image."
+Specific:    "List 5 specific objects visible in this image."
+Extract:     "What text appears in this image?"
+Analyze:     "Identify the trend shown in this chart."
+Compare:     "What differences do you see between image 1 and image 2?"
+Region:      "Describe only the top-right corner of the image."
+
+─────────────────────────────────────────
+BEST PRACTICES
+─────────────────────────────────────────
+
+Be specific → vague "describe this" gives vague output.
+Specify format → bullets, JSON, or plain text.
+Chain tasks → describe first, then analyze, then extract.
+Grounding → reference specific regions to focus attention.
+Simulate → when vision API unavailable, use text description of the image.
+
+─────────────────────────────────────────
+API PATTERN
+─────────────────────────────────────────
+
+messages = [{"role": "user", "content": [
+    {"type": "image_url", "image_url": {"url": url}},
+    {"type": "text", "text": "Your question here"}
+]}]
