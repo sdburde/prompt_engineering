@@ -1,0 +1,41 @@
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+15 — IMAGE GENERATION MODEL PROMPTING
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+MODELS: DALL-E 3, Stable Diffusion, Midjourney, Flux
+
+─────────────────────────────────────────
+PROMPT ANATOMY
+─────────────────────────────────────────
+
+Subject    → what/who is in the image.
+Style      → art style, medium, artist reference.
+Composition → framing, camera angle, rule of thirds.
+Lighting   → golden hour, studio, backlit, dramatic.
+Quality    → 8k, highly detailed, trending on artstation.
+
+─────────────────────────────────────────
+KEYWORDS
+─────────────────────────────────────────
+
+Negative prompt  → Terms the model should AVOID.
+                   blurry, distorted, extra limbs, watermark, text, low quality.
+
+Style transfer   → Add artist or movement name: "in the style of Monet", "cyberpunk".
+
+Aspect ratio     → 16:9 (landscape), 1:1 (square), 9:16 (portrait).
+
+─────────────────────────────────────────
+COMPOSITION TERMS
+─────────────────────────────────────────
+
+rule of thirds, centered, symmetrical, close-up,
+bird's eye view, worm's eye view, bokeh background,
+wide shot, medium shot, portrait
+
+─────────────────────────────────────────
+LLM REFINEMENT PATTERN
+─────────────────────────────────────────
+
+Prompt LLM: "Improve this image prompt: '{weak}'. Add style, lighting, composition, quality terms. Under 100 words."
+Use the improved prompt with the image gen model.
