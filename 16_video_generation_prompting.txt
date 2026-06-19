@@ -1,0 +1,40 @@
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+16 — VIDEO GENERATION MODEL PROMPTING
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+MODELS: Sora, Runway Gen-3, Pika, Kling
+
+─────────────────────────────────────────
+VIDEO PROMPT ADDITIONS OVER IMAGE
+─────────────────────────────────────────
+
+Motion      → how the subject moves.
+Camera move → pan, tilt, dolly, zoom, steadicam, drone, pull-back reveal.
+Duration    → 5 seconds, 10 seconds.
+Transition  → how scenes connect (cut, fade, dissolve).
+
+─────────────────────────────────────────
+CAMERA MOVEMENTS
+─────────────────────────────────────────
+
+Pan          → rotate left/right on fixed axis.
+Tilt         → rotate up/down on fixed axis.
+Dolly/Track  → camera physically moves through space.
+Zoom         → focal length changes (not same as dolly).
+Steadicam    → smooth movement while walking.
+Aerial/Drone → bird's eye view.
+Pull-back    → starts close, reveals context as it pulls out.
+
+─────────────────────────────────────────
+NEGATIVE PROMPTS FOR VIDEO
+─────────────────────────────────────────
+
+fast cuts, text overlays, watermark, flickering,
+digital artifacts, morphing faces, jump cuts, logos.
+
+─────────────────────────────────────────
+CONTINUITY RULE
+─────────────────────────────────────────
+
+For multi-scene videos: maintain consistent lighting, color palette, camera position.
+Label scenes [Scene 1], [Scene 2], [Scene 3] and use same style descriptor each time.
