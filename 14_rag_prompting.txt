@@ -1,0 +1,46 @@
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+14 — RAG PROMPTING
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+─────────────────────────────────────────
+KEYWORDS
+─────────────────────────────────────────
+
+RAG prompt     → System role + retrieved context + user question.
+                 Answer ONLY from the provided context.
+
+Grounding      → Force the model to cite which document supports each claim.
+                 Reduces hallucination.
+
+Graceful degradation → If answer not in context: "Not found in context."
+                       Never let model hallucinate from memory.
+
+Citation       → "[Doc N]" inline citation after each claim.
+                 Lets user trace answer back to source.
+
+Confidence     → After answer: HIGH / MEDIUM / LOW based on context coverage.
+                 HIGH = answer fully in context. LOW = inferred.
+
+─────────────────────────────────────────
+RAG PROMPT ANATOMY
+─────────────────────────────────────────
+
+[System role]
+Answer ONLY from the provided context.
+If not in context, say "I don't have enough information."
+
+[Context]
+[Doc 1] ...
+[Doc 2] ...
+
+[Question]
+{user_question}
+
+─────────────────────────────────────────
+RULES
+─────────────────────────────────────────
+
+Always add "ONLY from context" constraint to prevent hallucination.
+Use citation format for auditable answers.
+Return "not found" string (not silence) for unanswerable questions.
+Multi-doc synthesis: ask model to reference each doc it uses.
