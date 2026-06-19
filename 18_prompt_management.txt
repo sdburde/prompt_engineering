@@ -1,0 +1,42 @@
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+18 — PROMPT MANAGEMENT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+─────────────────────────────────────────
+KEYWORDS
+─────────────────────────────────────────
+
+Prompt registry  → Central dict mapping name → template + metadata.
+                   Single source of truth. No copy-paste duplication.
+
+Prompt catalog   → Searchable library of reusable prompts with tags.
+                   catalog.search("nlp") → list of matching prompt names.
+
+Template         → Prompt with {placeholder} variables.
+                   string.Template("summarize ${text} in ${n} sentences").
+
+Environment switch → Different prompts for dev vs prod.
+                     Dev: minimal. Prod: full role + format + constraints.
+
+─────────────────────────────────────────
+PROMPT REGISTRY PATTERN
+─────────────────────────────────────────
+
+REGISTRY = {
+  "task_v1": {
+    "version": "1.0",
+    "template": "...",
+    "defaults": {...},
+    "model": "...",
+    "temperature": 0
+  }
+}
+
+─────────────────────────────────────────
+PROBLEMS SOLVED
+─────────────────────────────────────────
+
+Version drift    → All callers use the same versioned template.
+Duplication      → One place to update; all callers get the change.
+No audit trail   → Registry stores version + author + description.
+Testing gap      → Test the template in isolation before deploying.
